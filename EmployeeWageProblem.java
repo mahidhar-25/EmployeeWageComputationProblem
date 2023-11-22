@@ -19,10 +19,12 @@ public class EmployeeWageProblem {
         
         int wagePerHourInPartTime = 8;
         int noOfHoursWorked = 1;
+        //use case 5
+        int workingDays = 20;
         //use case 4
         switch(isPartTime){
-            case 1 -> System.out.println("Daily wages for partTime based on working hours : " + wagePerHourInPartTime * noOfHoursWorked);
-            case 0 -> System.out.println("Daily wages per day is : " + wagePerHour * workingHoursPerDay);
+            case 1 -> System.out.println("Daily wages for partTime based on working hours : " + workingDays * wagePerHourInPartTime * noOfHoursWorked);
+            case 0 -> System.out.println("Daily wages per month is : " + workingDays * wagePerHour * workingHoursPerDay);
             default -> System.out.println("he is not an employee");
         }
     }
