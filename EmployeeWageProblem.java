@@ -9,5 +9,11 @@ public class EmployeeWageProblem {
         } else {
             System.out.println("Employee is Absent");
         }
+        int wagePerHour = 20;
+        int workingHoursPerDay = 8;
+        if(attendance == 1){
+            System.out.println("Daily wages per day is : " + wagePerHour * workingHoursPerDay);
+        }
+
     }
 }
