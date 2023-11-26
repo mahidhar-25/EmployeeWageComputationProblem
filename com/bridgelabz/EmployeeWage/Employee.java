@@ -1,5 +1,6 @@
 package com.bridgelabz.EmployeeWage;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -14,8 +15,10 @@ public class Employee {
     private String employeeId;
     private int totalWorkingDays;
     private int totalWorkingHours;
+    private ArrayList<Integer> dailyWorkingHours;
 
-    /*
+
+/*
     @desc : markAttendance function will mark the attendance by increase the working hours and working days
     @params : logging hours - integer no of hours worked in a day
     @return : void - no return
@@ -23,9 +26,21 @@ public class Employee {
 
     public void markAttendance(int loggingHours){
         totalWorkingHours += loggingHours;
-        totalWorkingDays++;
+        if(loggingHours > 0) {
+            totalWorkingDays++;
+        }
+        dailyWorkingHours.add(loggingHours);
     }
 
+    /*
+    @desc : getTotalWorkingHours , this function return the total working hours of an employee of daily
+    @params : no params
+    @return : Arraylist<integer> - total working hours of an employee daily
+     */
+
+    public ArrayList<Integer> getDailyWorkingHours() {
+        return dailyWorkingHours;
+    }
     /*
     @desc : getTotalWorkingHours , this function return the total working hours of an employee
     @params : no params
@@ -82,6 +97,7 @@ public class Employee {
         this.employeeName = employeeName;
         this.employeeId = employeeId;
         this.totalWorkingDays = 0;
+        dailyWorkingHours = new ArrayList<>();
     }
 
     /*

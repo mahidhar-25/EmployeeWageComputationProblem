@@ -132,10 +132,26 @@ public class Company {
                 if(employee.isFullTime()){
                     employee.markAttendance(getWages().getWORKING_HOURS_PER_DAY());
                 }else{
-                    int workingPartTimeHours = (int)(Math.random()*getWages().getWORKING_HOURS_PER_DAY());
+                    int workingPartTimeHours = (int)(Math.random()*getWages().getWORKING_HOURS_PER_DAY()) + 1;
                     employee.markAttendance(workingPartTimeHours);
                 }
+            }else{
+                employee.markAttendance(0);
             }
+        }
+    }
+
+    /*
+    @desc : it calculates the daily wages of an employee by taking an array of working hours of an employee
+    @param : employee object , that need to be calculated
+    @return : void - no return
+     */
+    public void calculateDailyWagesOfEmployee(Employee employee){
+        ArrayList<Integer> workingHours = employee.getDailyWorkingHours();
+        for(int i=0;i<workingHours.size();i++){
+            System.out.println(" day " + (i+1) + ", logged hours is " + workingHours.get(i) + " daily wage is  " +
+                    (employee.isFullTime() ? workingHours.get(i)*wages.getWAGES_PER_HOUR_FULL_TIME() :
+                            workingHours.get(i)*wages.getWAGES_PER_HOUR_PART_TIME()) );
         }
     }
 

@@ -18,7 +18,8 @@ public class EmployeeWageApplication {
     public static final int DISPLAY_EMPLOYEE = 6;
     public static final int DISPLAY_ORGANIZATION = 9;
     public static final int DISPLAY_TOTAL_WAGES_OF_COMPANY = 10;
-    public static final int EXIT = 11;
+    public static final int DISPLAY_DAILY_WAGES_OF_EMPLOYEE = 11;
+    public static final int EXIT = 12;
 
 
     public static void main(String[] args) {
@@ -34,7 +35,8 @@ public class EmployeeWageApplication {
         System.out.println("8. To display company details");
         System.out.println("9. To display organization details");
         System.out.println("10. To display total wage of a company");
-        System.out.println("11 . To exit");
+        System.out.println("11. To display daily wages of an employee");
+        System.out.println("12 . To exit");
         System.out.println("choose an option from the above every time : ");
         Scanner input = new Scanner(System.in);
         int option = input.nextInt();
@@ -156,6 +158,21 @@ public class EmployeeWageApplication {
                 case DISPLAY_ORGANIZATION -> {
                     if(organization != null) {
                         System.out.println("company details are : \n" + organization);
+                    }
+                }
+                case DISPLAY_DAILY_WAGES_OF_EMPLOYEE->{
+                    if(organization != null) {
+                        System.out.println("Enter  company name  is : ");
+                        companyName = input.next();
+                        company = organization.getCompanyDetailsFromOrganizations(companyName);
+                        if (company != null) {
+                            System.out.println("Enter employee id is : ");
+                            employeeId = input.next();
+                            employee = company.getEmployeeDetailsFromCompany(employeeId);
+                            if (employee != null) {
+                               company.calculateDailyWagesOfEmployee(employee);
+                            }
+                        }
                     }
                 }
                 default -> System.out.println("choose the correct option from the above");
