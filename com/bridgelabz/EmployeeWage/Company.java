@@ -4,6 +4,11 @@ package com.bridgelabz.EmployeeWage;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+@desc : company class hold an array of employees and for each company we will be hacve a wages uniques and we can set them
+        at any time , it has multiple methods such as add of new employees into company and remove them ..etc
+ */
+
 public class Company {
     public static final int PRESENT = 1;
     private String companyName;
