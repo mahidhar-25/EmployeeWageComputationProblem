@@ -8,6 +8,7 @@ import java.util.Scanner;
    and add , remove a company from organization.
  */
 public class Organizations {
+    //usecase 12 having list of companies and each company has a list of employee and wage
     ArrayList<Company> companies;
     private String organizationId;
 

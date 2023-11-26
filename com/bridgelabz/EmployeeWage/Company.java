@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Company {
     public static final int PRESENT = 1;
     private String companyName;
+
     public ArrayList<Employee> employees;
     private EmployeeWageBuilder wages;
     private double totalWagesOfCompany;
