@@ -2,13 +2,17 @@ package com.bridgelabz.EmployeeWage;
 
 import java.util.Scanner;
 
+
+
 /*
 desc : EmployeeWageBuilder class takes care of the wages that will be given by company to the employee
        it takes some final limits like max working hours per day , in a month , what are wages for full time employee,
        and for part-time employee and has method to take inputs from user and create an instance of employee wage builder,
        and it also calculates the amount of wage for a particular employee based on the company info and working hours
  */
-public class EmployeeWageBuilder {
+
+
+public class EmployeeWageBuilder implements WageBuilder {
     private final int WORKING_HOURS_PER_DAY ;
     private final int WORKING_DAYS_IN_MONTH ;
     private final int WAGES_PER_HOUR_FULL_TIME ;
