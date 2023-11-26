@@ -3,7 +3,10 @@ package com.bridgelabz.EmployeeWage;
 import java.util.Scanner;
 
 /*
-@desc : user application for employee wage problem
+@desc : The application allows users to perform various tasks related to employee management in an organization.
+It provides a menu-driven interface where users can choose different options to create organizations,
+add companies, employees, generate attendance, calculate wages, and display various details related to organizations,
+ companies, and employees.
  */
 public class EmployeeWageApplication {
 
