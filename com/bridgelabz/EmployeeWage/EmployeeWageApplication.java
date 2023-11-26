@@ -17,12 +17,13 @@ public class EmployeeWageApplication {
     public static final int DISPLAY_COMPANY = 8;
     public static final int DISPLAY_EMPLOYEE = 6;
     public static final int DISPLAY_ORGANIZATION = 9;
-    public static final int EXIT = 10;
+    public static final int DISPLAY_TOTAL_WAGES_OF_COMPANY = 10;
+    public static final int EXIT = 11;
 
 
     public static void main(String[] args) {
 
-        System.out.println("1. To initialize a  organization");
+        System.out.println("0. To initialize a  organization");
         System.out.println("1. To add new Company to existing organization");
         System.out.println("2. To add new Employee to existing company");
         System.out.println("3. To remove Employee from existing company");
@@ -31,8 +32,9 @@ public class EmployeeWageApplication {
         System.out.println("6. To display employee details");
         System.out.println("7. To display wages for the respective company");
         System.out.println("8. To display company details");
-        System.out.println("8. To display organization details");
-        System.out.println("10 . To exit");
+        System.out.println("9. To display organization details");
+        System.out.println("10. To display total wage of a company");
+        System.out.println("11 . To exit");
         System.out.println("choose an option from the above every time : ");
         Scanner input = new Scanner(System.in);
         int option = input.nextInt();
@@ -103,6 +105,16 @@ public class EmployeeWageApplication {
                             if (employee != null) {
                                 System.out.println("total wage of employee is " + company.getEmployeeWage(employee));
                             }
+                        }
+                    }
+                }
+                case DISPLAY_TOTAL_WAGES_OF_COMPANY->{
+                    if(organization != null) {
+                        System.out.println("Enter  company name  is : ");
+                        companyName = input.next();
+                        company = organization.getCompanyDetailsFromOrganizations(companyName);
+                        if (company != null) {
+                           System.out.println("Total wages of company are : " + company.getTotalWagesOfCompany());
                         }
                     }
                 }
